@@ -2,22 +2,21 @@
 #include <stdbool.h>
 
 bool ehPalindromo(char str[]) {
-    int i = 0, j = 0;
+    int i, j;
 
-    while (str[j] != '\0') {
-        j++;
-    }
-    j--;
+   
+    for (j = 0; str[j] != '\0'; j++);
 
-    // Compara do início e do fim
-    while (i < j) {
+    j--; 
+
+  
+    for (i = 0; i < j; i++, j--) {
         if (str[i] != str[j]) {
-            return false; // Não é palíndromo
+            return false;
         }
-        i++;
-        j--;
     }
-    return true; // É palíndromo
+
+    return true;
 }
 
 int main() {
