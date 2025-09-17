@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool comparaStrings(char s1[], char s2[]) {
+bool comparar (char str1[],char str2[]){
     int i = 0;
-
-    while (s1[i] != '\0' && s2[i] != '\0') {
-        if (s1[i] != s2[i]) {
-            return false; //diferente
+    
+    while (str1[i] != '\0' && str2[i] != '\0'){
+        if(str1[i] != str2[i]){
+            return false;
         }
         i++;
     }
-    if (s1[i] == '\0' && s2[i] == '\0') {
-        return true; // igual
+    if(str1[i] == '\0' && str2[i] == '\0'){
+        return true;
     }
-    return false; // diferente
+    
+
 }
 
 int main() {
@@ -25,7 +26,7 @@ int main() {
     printf("Digite a segunda string: ");
     scanf("%49s", str2);
 
-    if (comparaStrings(str1, str2)) {
+    if (comparar(str1, str2)) {
         printf("As strings sao iguais.\n");
     } else {
         printf("As strings sao diferentes.\n");
